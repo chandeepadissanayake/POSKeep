@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "welcome.h"
 #include "consts/poskeep.h"
@@ -150,8 +151,8 @@ void _poskeep_print_project_details() {
 /*
  User input requiring function to print out details about specific components.
  */
-void _poskeep_request_learn_more() {
-	printf("Please enter component number you wish learn more:");
+bool _poskeep_request_learn_more() {
+	printf("Please enter component number you wish learn more or \"-1\" to continue:");
 	int index_component;
 	scanf("%d", &index_component);
 
@@ -165,9 +166,14 @@ void _poskeep_request_learn_more() {
 			printf("\t\t%s\n", project_component.sub_tasks[i]);
 		}
 	}
+	else if (index_component < 0) {
+		return false;
+	}
 	else {
 		printf("Invalid Input\n");
 	}
+	
+	return true;
 }
 
 /*
@@ -177,8 +183,9 @@ void poskeep_print_welcome() {
 	_poskeep_init_project_details();
 	_poskeep_print_head();
 	_poskeep_print_project_details();
-	// Following infinite loop is not supposed to exist here upon development of the entire program, therefore will be removed later.
-	while (1) {
-		_poskeep_request_learn_more();
+	
+	bool flag_continue = false;
+	while (!flag_continue) {
+		flag_continue = !_poskeep_request_learn_more();
 	}
 }
