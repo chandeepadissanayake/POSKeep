@@ -1,0 +1,1 @@
+gcc -Iconsts -Imetadata/model main.c welcome.c -o bin/poskeep
