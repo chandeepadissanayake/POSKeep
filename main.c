@@ -6,7 +6,9 @@
  **/
  
 #include "welcome.h"
+#include "commands.h"
 
 void main() {
 	poskeep_print_welcome();
+	poskeep_handle_commands();
 }

@@ -11,7 +11,7 @@
 
 #include "welcome.h"
 #include "consts/poskeep.h"
-#include "metadata/model/project.h"
+#include "model/metadata/project.h"
 /*
  Following constants can be changed based on the need.
  */

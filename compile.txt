@@ -1,1 +1,1 @@
-gcc -Iconsts -Imetadata/model main.c welcome.c -o bin/poskeep
+gcc -Icmdimpl -Iconsts -Imodel -Imodel/metadata main.c welcome.c commands.c cmdimpl/poskeepexit.c model/modelcommands.c -o bin/poskeep
