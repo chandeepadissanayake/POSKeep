@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Windows:
 
 gcc -I"C:\Program Files\MySQL\MySQL Server 8.0\include" -I"../src" -Icmdimpl -Iconfig -Iconsts -Idb -Imodel -Imodel/metadata -Iutils cmdimpl/poskeepexit.c db/connection.c model/modelcommands.c utils/mdarrutils.c commands.c databases.c main.c welcome.c -o "../bin/poskeep"
@@ -5,3 +6,6 @@ gcc -I"C:\Program Files\MySQL\MySQL Server 8.0\include" -I"../src" -Icmdimpl -Ic
 Linux:
 
 gcc -I"../src" -Icmdimpl -Iconfig -Iconsts -Idb -Imodel -Imodel/metadata -Iutils cmdimpl/poskeepexit.c db/connection.c model/modelcommands.c utils/mdarrutils.c commands.c databases.c main.c welcome.c -o "../bin/poskeep" `mysql_config --cflags --libs`
+=======
+gcc -I"C:\Program Files\MySQL\MySQL Server 8.0\include" -I"../src" -Icmdimpl -Iconfig -Iconsts -Idb -Imodel -Imodel/metadata -Iutils cmdimpl/poskeepexit.c db/connection.c model/modelcommands.c utils/mdarrutils.c commands.c databases.c main.c welcome.c -o "../bin/poskeep"
+>>>>>>> 60dc38c2447a97fa83fb4623ed0be00c9042f8a8
