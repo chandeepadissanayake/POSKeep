@@ -1,0 +1,7 @@
+Windows:
+
+gcc -I"C:\Program Files\MySQL\MySQL Server 8.0\include" -I"../src" -Icmdimpl -Iconfig -Iconsts -Idb -Imodel -Imodel/metadata -Iutils cmdimpl/poskeepexit.c db/connection.c model/modelcommands.c utils/mdarrutils.c commands.c databases.c main.c welcome.c -o "../bin/poskeep"
+
+Linux:
+
+gcc -I"../src" -Icmdimpl -Iconfig -Iconsts -Idb -Imodel -Imodel/metadata -Iutils cmdimpl/poskeepexit.c db/connection.c model/modelcommands.c utils/mdarrutils.c commands.c databases.c main.c welcome.c -o "../bin/poskeep" `mysql_config --cflags --libs`
