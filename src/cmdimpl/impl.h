@@ -13,3 +13,8 @@
  Exits the POSKeep system
  */
 bool poskeep_exit();
+
+/*
+ Inventory search functionality.
+ */
+bool poskeep_inv_search();

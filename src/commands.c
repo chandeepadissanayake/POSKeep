@@ -42,9 +42,13 @@ bool _poskeep_grab_commands() {
 void _poskeep_init_commands() {
     CommandMapping cmdmap_exit;
     create_command_mapping(&cmdmap_exit, 'e', poskeep_exit, "Exits the POSKeep system");
+    
+    CommandMapping cmdmap_inv_search;
+    create_command_mapping(&cmdmap_inv_search, 'i', poskeep_inv_search, "Search the Inventory for specific items");
 
     CommandMapping tmp_cmd_mappings[] = {
         cmdmap_exit,
+        cmdmap_inv_search,
     };
 
     POSKEEP_COMMAND_MAPPINGS = malloc(sizeof (tmp_cmd_mappings));

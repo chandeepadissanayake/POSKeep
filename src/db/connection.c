@@ -87,7 +87,7 @@ char*** poskeep_db_execute_query(char* query) {
 }
 
 void poskeep_db_free_resultset(char*** resultset) {
-    int rows = *resultset[0][0];
+    int rows = (int)*resultset[0][0];
     poskeep_utils_deallocate_2d_arr(resultset, rows);
 }
 

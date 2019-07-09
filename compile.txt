@@ -1,11 +1,11 @@
-<<<<<<< HEAD
 Windows:
 
 gcc -I"C:\Program Files\MySQL\MySQL Server 8.0\include" -I"../src" -Icmdimpl -Iconfig -Iconsts -Idb -Imodel -Imodel/metadata -Iutils cmdimpl/poskeepexit.c db/connection.c model/modelcommands.c utils/mdarrutils.c commands.c databases.c main.c welcome.c -o "../bin/poskeep"
 
 Linux:
 
-gcc -I"../src" -Icmdimpl -Iconfig -Iconsts -Idb -Imodel -Imodel/metadata -Iutils cmdimpl/poskeepexit.c db/connection.c model/modelcommands.c utils/mdarrutils.c commands.c databases.c main.c welcome.c -o "../bin/poskeep" `mysql_config --cflags --libs`
-=======
-gcc -I"C:\Program Files\MySQL\MySQL Server 8.0\include" -I"../src" -Icmdimpl -Iconfig -Iconsts -Idb -Imodel -Imodel/metadata -Iutils cmdimpl/poskeepexit.c db/connection.c model/modelcommands.c utils/mdarrutils.c commands.c databases.c main.c welcome.c -o "../bin/poskeep"
->>>>>>> 60dc38c2447a97fa83fb4623ed0be00c9042f8a8
+Compile:
+([ ! -d "bin" ] && mkdir bin); gcc -I"src" -Isrc/cmdimpl -Isrc/config -Isrc/consts -Isrc/db -Isrc/model -Isrc/model/metadata -Isrc/utils src/cmdimpl/poskeepexit.c src/cmdimpl/poskeepinvsearch.c src/db/connection.c src/model/modelcommands.c src/utils/mdarrutils.c src/commands.c src/databases.c src/main.c src/welcome.c -o "bin/poskeep" `mysql_config --cflags --libs`
+
+Compile & Run:
+([ ! -d "bin" ] && mkdir bin); gcc -I"src" -Isrc/cmdimpl -Isrc/config -Isrc/consts -Isrc/db -Isrc/model -Isrc/model/metadata -Isrc/utils src/cmdimpl/poskeepexit.c src/cmdimpl/poskeepinvsearch.c src/db/connection.c src/model/modelcommands.c src/utils/mdarrutils.c src/commands.c src/databases.c src/main.c src/welcome.c -o "bin/poskeep" `mysql_config --cflags --libs`; bin/poskeep;
