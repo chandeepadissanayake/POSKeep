@@ -18,12 +18,13 @@ This must include the following arguments.
         1. The character input by the user which is used to map the command.
         2. The function pointer with the return type bool and returning false only in the case, receipt of exit command.
         3. A help string which describes what is the purpose of the command.
- Note: Initialize mappings as decribed above in _poskeep_init_commands function
+ Note: Initialize mappings as described above in _poskeep_init_commands function
  */
 CommandMapping* POSKEEP_COMMAND_MAPPINGS = NULL;
+int COUNT_POSKEEP_COMMAND_MAPPINGS = 0;
 
-bool _poskeep_process_command(char *ins_ptr) {
-    for (int i = 0; i < (sizeof (*POSKEEP_COMMAND_MAPPINGS) / sizeof (POSKEEP_COMMAND_MAPPINGS[0])); i++) {
+bool _poskeep_process_command(char* ins_ptr) {
+    for (int i = 0; i < COUNT_POSKEEP_COMMAND_MAPPINGS; i++) {
         CommandMapping curr_cmd_mapping = POSKEEP_COMMAND_MAPPINGS[i];
         if (curr_cmd_mapping.cmd == *ins_ptr) {
             bool(*func)() = curr_cmd_mapping.func_ptr;
@@ -51,17 +52,16 @@ void _poskeep_init_commands() {
         cmdmap_inv_search,
     };
 
-    POSKEEP_COMMAND_MAPPINGS = malloc(sizeof (tmp_cmd_mappings));
-    for (int i = 0; i < (sizeof (tmp_cmd_mappings) / sizeof (tmp_cmd_mappings[0])); i++) {
+    POSKEEP_COMMAND_MAPPINGS = malloc(sizeof(tmp_cmd_mappings));
+    for (int i = 0; i < (sizeof(tmp_cmd_mappings) / sizeof(tmp_cmd_mappings[0])); i++) {
         POSKEEP_COMMAND_MAPPINGS[i] = tmp_cmd_mappings[i];
     }
+    
+    COUNT_POSKEEP_COMMAND_MAPPINGS = sizeof(tmp_cmd_mappings) / sizeof(tmp_cmd_mappings[0]);
 }
 
 void poskeep_handle_commands() {
     _poskeep_init_commands();
 
-    bool exit_flag = false;
-    while (!exit_flag) {
-        exit_flag = !_poskeep_grab_commands();
-    }
+    while (_poskeep_grab_commands());
 }

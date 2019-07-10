@@ -30,7 +30,7 @@ int poskeep_db_connect();
  
  From Row #2 onwards there will be the records returned by the query.
  */
-char*** poskeep_db_execute_query(char* query);
+char*** poskeep_db_execute_query(char** query, int query_elem_count);
 
 /*
  Used to free up the memory used by a resultset returned by executing poskeep_db_execute_query function.

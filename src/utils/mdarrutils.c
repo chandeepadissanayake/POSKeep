@@ -7,6 +7,8 @@
 #include "mdarrutils.h"
 #include <stdlib.h>
 
+#include <stdio.h>
+
 int _poskeep_utils_2d_arr_last_rows = 0;
 int _poskeep_utils_2d_arr_last_cols = 0;
 

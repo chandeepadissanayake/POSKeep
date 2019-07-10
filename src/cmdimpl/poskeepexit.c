@@ -10,6 +10,6 @@
 #include <stdbool.h>
 
 bool poskeep_exit() {
-    printf("Exit Command Received. Exiting...");
+    printf("Exit Command Received. Exiting...\n");
     return false;
 }

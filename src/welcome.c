@@ -182,8 +182,5 @@ void poskeep_print_welcome() {
     _poskeep_print_head();
     _poskeep_print_project_details();
 
-    bool flag_continue = false;
-    while (!flag_continue) {
-        flag_continue = !_poskeep_request_learn_more();
-    }
+    while (_poskeep_request_learn_more());
 }

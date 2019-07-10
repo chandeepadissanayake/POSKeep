@@ -9,6 +9,8 @@
 #include <mysql.h>
 #include "config/db.h"
 #include "utils/mdarrutils.h"
+#include <string.h>
+#include <stdlib.h>
 
 MYSQL *_poskeep_db_con;
 int _poskeep_db_last_error_code;
@@ -29,12 +31,37 @@ int poskeep_db_connect() {
     return POSKEEP_RESPONSE_DB_CONNECT_SUCCESS;
 }
 
-char*** poskeep_db_execute_query(char* query) {
-    if (!mysql_query(_poskeep_db_con, query)) {
+char*** poskeep_db_execute_query(char** query_elems, int query_elem_count) {
+    char* query;
+    
+    if (query_elem_count == 0) {
+        query = "";
+    }
+    else {
+        int query_char_count = 0;
+        for (int i = 0; i < query_elem_count; i++) {
+            query_char_count += strlen(query_elems[i]);
+        }
+        
+        query = (char*) malloc(query_char_count * sizeof(char));
+        strcpy(query, query_elems[0]);
+        for (int i = 1; i < query_elem_count; i++) {
+            strcat(query, query_elems[i]);
+        }
+    }
+    
+    if (mysql_query(_poskeep_db_con, query)) {
         _poskeep_db_last_error_code = POSKEEP_ERROR_DB_QUERY_FAILED;
+        if (query_elem_count != 0) {
+            free(query);
+        }
         return NULL;
     }
-
+    
+    if (query_elem_count != 0) {
+        free(query);
+    }
+    
     MYSQL_RES *result = mysql_store_result(_poskeep_db_con);
     if (result == NULL) {
         _poskeep_db_last_error_code = POSKEEP_ERROR_DB_RESULTSET_STORE_FAILED;
