@@ -7,8 +7,6 @@
 #include "mdarrutils.h"
 #include <stdlib.h>
 
-#include <stdio.h>
-
 int _poskeep_utils_2d_arr_last_rows = 0;
 int _poskeep_utils_2d_arr_last_cols = 0;
 
@@ -38,7 +36,9 @@ int poskeep_utils_get_last_2d_arr_cols() {
 
 void poskeep_utils_deallocate_2d_arr(char*** arr, int rows) {
     for (int i = 0; i < rows; i++) {
-        free(arr[i]);
+        if (arr[i] != NULL) {
+            free(arr[i]);
+        }
     }
 
     free(arr);

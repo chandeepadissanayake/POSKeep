@@ -36,7 +36,7 @@ bool _poskeep_process_command(char* ins_ptr) {
 bool _poskeep_grab_commands() {
     char ins;
     printf("Please enter a command to continue: ");
-    scanf("%c", &ins);
+    scanf(" %c", &ins);
     return _poskeep_process_command(&ins);
 }
 

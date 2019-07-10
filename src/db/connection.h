@@ -6,6 +6,8 @@
  **/
 #pragma once
 
+#include <stdbool.h>
+
 /*
  Constants
  */
@@ -30,13 +32,18 @@ int poskeep_db_connect();
  
  From Row #2 onwards there will be the records returned by the query.
  */
-char*** poskeep_db_execute_query(char** query, int query_elem_count);
+char*** poskeep_db_execute_query(char* query[], int query_elem_count);
+
+/*
+ Executes INSERT/UPDATE Queries on the MySQL Database and returns a true of the query was successful, otherwise false.
+ */
+bool poskeep_db_execute_update(char** query_elems, int query_elem_count);
 
 /*
  Used to free up the memory used by a resultset returned by executing poskeep_db_execute_query function.
  This must be called once the resultset array is useless.
  */
-void poskeep_db_free_resultset(char*** resultset);
+void poskeep_db_free_resultset(char*** resultset, int rows);
 
 /*
  Returns the last error encountered by MySQL Connection.
