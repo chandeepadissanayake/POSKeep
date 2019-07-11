@@ -1,6 +1,6 @@
 # POSKeep
 
-# Compilation Instructions for Debian Distributions of Linux
+# Compilation Instructions for Debian Based Distributions of Linux
 
   1. Clone the repository.
   2. You should have MySQL Database Server and C libraries for MySQL installed. Execute the following commands to get them installed.
