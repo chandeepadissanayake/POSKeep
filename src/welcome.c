@@ -1,6 +1,6 @@
 /**
- * Author: D. M. C. Dissanayake
- * Student No: PS/2017/035
+ * Author: D.M. C. Dissanayake, S. Gunasekara
+ * Student No: PS/2017/035, PS/2017/050
  * Date: 02/07/2019
  * Purpose: Welcome Screen of the POSKeep(Point Of Sale Application)
  **/
@@ -156,7 +156,7 @@ bool _poskeep_request_learn_more() {
     int index_component;
     scanf("%d", &index_component);
 
-    if (index_component > 0 && index_component <= COMPONENT_COUNT) {
+    if (index_component > 0 && index_component <= 3) {
         ProjectComponent project_component = PROJECT_COMPONENTS[index_component - 1];
         printf("Additional Details about the component %d\n", index_component);
         printf("Component: %s\n", project_component.title);

@@ -2,7 +2,7 @@
  * Author: D. M. C. Dissanayake
  * Student No: PS/2017/035
  * Date: 03/07/2019
- * Purpose: Implementation fo the functions for handling arrays.
+ * Purpose: Implementation of the functions for handling arrays.
  **/
 #include "mdarrutils.h"
 #include <stdlib.h>

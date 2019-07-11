@@ -6,5 +6,5 @@
  **/
 #pragma once
 
-const char* POSKEEP_DB_TABLE_INVENTORY = "tbl_inventory";
-const char* POSKEEP_DB_TABLE_STOCKS = "tbl_stocks";
+#define POSKEEP_DB_TABLE_INVENTORY "tbl_inventory"
+#define POSKEEP_DB_TABLE_TRANSACTIONS "tbl_transactions"

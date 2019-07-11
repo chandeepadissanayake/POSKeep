@@ -46,10 +46,14 @@ void _poskeep_init_commands() {
     
     CommandMapping cmdmap_inv_search;
     create_command_mapping(&cmdmap_inv_search, 'i', poskeep_inv_search, "Search the Inventory for specific items");
+    
+    CommandMapping cmdmap_transaction;
+    create_command_mapping(&cmdmap_transaction, 't', poskeep_transaction, "Handles a transaction.");
 
     CommandMapping tmp_cmd_mappings[] = {
         cmdmap_exit,
         cmdmap_inv_search,
+        cmdmap_transaction,
     };
 
     POSKEEP_COMMAND_MAPPINGS = malloc(sizeof(tmp_cmd_mappings));
