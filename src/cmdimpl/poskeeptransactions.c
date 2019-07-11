@@ -125,7 +125,7 @@ bool _poskeep_transaction_get_customer_details() {
     printf("Details of the Customer\n");
     printf("========================\n");
     
-    printf("Customer Name(40 characters) or leave empty if unknown: ");
+    printf("Customer Name(40 characters) or type \"-\" if unknown: ");
     scanf(" %s", pt_customer_name);
     
     printf("End of Customer Details\n");
@@ -158,6 +158,10 @@ bool _poskeep_transaction_db_insert() {
         tmp_payment,"')",
     };
     bool state_ins_query = poskeep_db_execute_update(query, (sizeof(query) / sizeof(query[0])));
+    free(tmp_total_cost);
+    free(tmp_discount);
+    free(tmp_final_cost);
+    free(tmp_payment);
     
     if (state_ins_query) {
         printf("Transaction successfully recorded in the database.\n");
