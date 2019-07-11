@@ -123,23 +123,16 @@ bool poskeep_db_execute_update(char** query_elems, int query_elem_count) {
         query = "";
     }
     else {
-        printf("1\n");
         int query_char_count = 0;
         for (int i = 0; i < query_elem_count; i++) {
-            printf("ELEM: %s\n", query_elems[i]);
             query_char_count += strlen(query_elems[i]);
         }
-        printf("2\n");
         
-        printf("3\n");
         query = (char*) malloc(query_char_count * sizeof(char));
-        printf("4\n");
         strcpy(query, query_elems[0]);
-        printf("5\n");
         for (int i = 1; i < query_elem_count; i++) {
             strcat(query, query_elems[i]);
         }
-        printf("6\n");
     }
     
     if (mysql_query(_poskeep_db_con, query)) {

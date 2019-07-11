@@ -157,9 +157,7 @@ bool _poskeep_transaction_db_insert() {
         tmp_final_cost, "','",
         tmp_payment,"')",
     };
-    printf("Before\n");
     bool state_ins_query = poskeep_db_execute_update(query, (sizeof(query) / sizeof(query[0])));
-    printf("After\n");
     
     if (state_ins_query) {
         printf("Transaction successfully recorded in the database.\n");
