@@ -12,6 +12,6 @@
 
 #define POSKEEP_DB_USER "root"
 
-#define POSKEEP_DB_PWD "{~B5KvXJpj"
+#define POSKEEP_DB_PWD "root"
 
 #define POSKEEP_DB_NAME "db_poskeep"
