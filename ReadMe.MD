@@ -20,6 +20,6 @@
   4. Change the required fields in the src/config/db.h to suit your MySQL Server Credentials.
   5. In the same terminal opened above, run the following command to compile the project and run POSKeep.
       ```
-        ([ ! -d "bin" ] && mkdir bin); gcc -Isrc src/cmdimpl/poskeepexit.c src/cmdimpl/poskeepinvsearch.c src/cmdimpl/poskeeptransactions.c src/db/connection.c src/model/modelcommands.c src/utils/mdarrutils.c src/utils/strutils.c src/commands.c src/databases.c src/main.c src/welcome.c -o "bin/poskeep" `mysql_config --cflags --libs`; bin/poskeep;
+        ([ ! -d "bin" ] && mkdir bin); gcc -Isrc src/cmdimpl/poskeepexit.c -Isrc src/cmdimpl/poskeepinvexport.c src/cmdimpl/poskeepinvsearch.c src/cmdimpl/poskeeptransactions.c src/db/connection.c src/model/modelcommands.c src/utils/mdarrutils.c src/utils/strutils.c src/commands.c src/databases.c src/main.c src/welcome.c -o "bin/poskeep" `mysql_config --cflags --libs`; bin/poskeep;
       ```
 
