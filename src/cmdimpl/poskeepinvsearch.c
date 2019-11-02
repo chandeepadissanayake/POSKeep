@@ -9,14 +9,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include "consts/commands.h"
 #include "db/connection.h"
 #include "consts/database.h"
 #include "consts/dbtables.h"
 #include <stdio.h>
 
 #define MAX_INPUT_LENGTH 20
-
-const char* COMMAND_DONE = "[done]";
 
 bool poskeep_inv_search() {
     while (true) {

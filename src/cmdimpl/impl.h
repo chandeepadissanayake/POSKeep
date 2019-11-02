@@ -23,3 +23,8 @@ bool poskeep_transaction();
  Inventory search functionality.
  */
 bool poskeep_inv_search();
+
+/*
+ Inventory export functionality.
+ */
+bool poskeep_inv_export();

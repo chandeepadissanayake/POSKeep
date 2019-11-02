@@ -10,6 +10,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
+#include "consts/commands.h"
 #include "db/connection.h"
 #include "consts/database.h"
 #include "consts/dbtables.h"
@@ -18,9 +19,6 @@
 
 #define MAX_INPUT_LENGTH 40
 #define MAX_NUM_SIZE 100
-
-const char* COMMAND_CANCEL = "[canc]";
-const char* COMMAND_IL_COMPLETE = "[done]";
 
 float pt_total_cost, pt_discount, pt_final_cost, pt_payment, pt_balance;
 char pt_customer_name[MAX_INPUT_LENGTH];
@@ -44,7 +42,7 @@ bool _poskeep_transaction_handle_item_list() {
         if (strcmp(ins_db_id_item, COMMAND_CANCEL) == 0) {
             return false;
         }
-        else if (strcmp(ins_db_id_item, COMMAND_IL_COMPLETE) == 0) {
+        else if (strcmp(ins_db_id_item, COMMAND_DONE) == 0) {
             break;
         }
         else {

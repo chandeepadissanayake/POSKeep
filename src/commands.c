@@ -46,6 +46,9 @@ void _poskeep_init_commands() {
     
     CommandMapping cmdmap_inv_search;
     create_command_mapping(&cmdmap_inv_search, 'i', poskeep_inv_search, "Search the Inventory for specific items");
+
+    CommandMapping cmdmap_inv_export;
+    create_command_mapping(&cmdmap_inv_export, 'x', poskeep_inv_export, "Searches using the input from a file and Exports the results.");
     
     CommandMapping cmdmap_transaction;
     create_command_mapping(&cmdmap_transaction, 't', poskeep_transaction, "Handles a transaction.");
@@ -53,6 +56,7 @@ void _poskeep_init_commands() {
     CommandMapping tmp_cmd_mappings[] = {
         cmdmap_exit,
         cmdmap_inv_search,
+        cmdmap_inv_export,
         cmdmap_transaction,
     };
 
