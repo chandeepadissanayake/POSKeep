@@ -18,6 +18,8 @@
 #define MAX_PATH_LENGTH 260
 #define MAX_DB_ID_LENGTH 11
 
+// Used to count number of lines in a given file.
+// Sets the line count to the reference variable (lines_count)
 void _poskeep_count_lines_file(char* file_path, int* lines_count) {
     FILE *fp;
     fp = fopen(file_path, "r");
@@ -26,6 +28,7 @@ void _poskeep_count_lines_file(char* file_path, int* lines_count) {
         int ch = 0;
         *lines_count = 1;
         while ((ch = fgetc(fp)) != EOF) {
+            // Adds one to the count whenever a newline character is found.
             if (ch == '\n') {
                 *lines_count++;
             }
