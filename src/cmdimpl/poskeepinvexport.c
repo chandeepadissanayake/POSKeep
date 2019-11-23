@@ -18,24 +18,22 @@
 #define MAX_PATH_LENGTH 260
 #define MAX_DB_ID_LENGTH 11
 
-int _poskeep_count_lines_file(char* file_path) {
+void _poskeep_count_lines_file(char* file_path, int* lines_count) {
     FILE *fp;
     fp = fopen(file_path, "r");
 
     if (fp != NULL) {
         int ch = 0;
-        int lines_count = 1;
+        *lines_count = 1;
         while ((ch = fgetc(fp)) != EOF) {
             if (ch == '\n') {
-                lines_count++;
+                *lines_count++;
             }
         }
         fclose(fp);
-
-        return lines_count;
     }
     else {
-        return 0;
+        *lines_count = 0;
     }
 }
 
@@ -72,7 +70,8 @@ bool poskeep_inv_export() {
                  * Such single entry is counted as one line.
                  * Array to save file data would be of the size number of lines in the file * MAX_DB_ID_LENGTH
                  */
-                int ins_file_ids_count = _poskeep_count_lines_file(ins_path_to_input_file);
+                int ins_file_ids_count;
+                _poskeep_count_lines_file(ins_path_to_input_file, &ins_file_ids_count);
                 char ids_to_search[ins_file_ids_count][MAX_DB_ID_LENGTH];
 
                 // Declares the buffer and reads the file into the array.
