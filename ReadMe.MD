@@ -6,7 +6,7 @@
   2. You should have MySQL Database Server and C libraries for MySQL installed. Execute the following commands to get them installed.
       ```
         sudo apt-get install mysql-server -y
-        sudo apt-get install libmysqlclient-dev
+        sudo apt-get install libmysqlclient-dev libssl-dev
       ```
   3. Create a database with the name "db_poskeep" and use (source) the file db_poskeep.sql provided in the root of the repository folder to create the necessary tables. You may use the following commands in order for this purpose.
       ```
