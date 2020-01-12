@@ -28,3 +28,8 @@ bool poskeep_inv_search();
  Inventory export functionality.
  */
 bool poskeep_inv_export();
+
+/*
+ * Transactions insert functionality from external file source.
+ */
+bool poskeep_transactions_insert();

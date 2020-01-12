@@ -53,11 +53,15 @@ void _poskeep_init_commands() {
     CommandMapping cmdmap_transaction;
     create_command_mapping(&cmdmap_transaction, 't', poskeep_transaction, "Handles a transaction.");
 
+    CommandMapping cmdmap_transaction_insert;
+    create_command_mapping(&cmdmap_transaction_insert, 'T', poskeep_transactions_insert, "Inserts transactions into the database using records in an external file.");
+
     CommandMapping tmp_cmd_mappings[] = {
         cmdmap_exit,
         cmdmap_inv_search,
         cmdmap_inv_export,
         cmdmap_transaction,
+        cmdmap_transaction_insert,
     };
 
     POSKEEP_COMMAND_MAPPINGS = malloc(sizeof(tmp_cmd_mappings));

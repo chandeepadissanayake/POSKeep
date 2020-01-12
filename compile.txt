@@ -1,7 +1,7 @@
 Linux:
 
 Compile:
-([ ! -d "bin" ] && mkdir bin); gcc -Isrc src/cmdimpl/poskeepexit.c src/cmdimpl/poskeepinvsearch.c src/db/connection.c src/model/modelcommands.c src/utils/mdarrutils.c src/commands.c src/databases.c src/main.c src/welcome.c -o "bin/poskeep" `mysql_config --cflags --libs`
+([ ! -d "bin" ] && mkdir bin); gcc -Isrc src/cmdimpl/poskeepexit.c src/cmdimpl/poskeepinvexport.c src/cmdimpl/poskeepinvsearch.c src/cmdimpl/poskeeptransactions.c src/cmdimpl/poskeeptransactionsinsert.c src/db/connection.c src/model/modelcommands.c src/utils/fileutils.c src/utils/mdarrutils.c src/utils/strutils.c src/commands.c src/databases.c src/main.c src/welcome.c -o "bin/poskeep" `mysql_config --cflags --libs`
 
 Compile & Run:
-([ ! -d "bin" ] && mkdir bin); gcc -Isrc src/cmdimpl/poskeepexit.c src/cmdimpl/poskeepinvsearch.c src/cmdimpl/poskeeptransactions.c src/db/connection.c src/model/modelcommands.c src/utils/mdarrutils.c src/utils/strutils.c src/commands.c src/databases.c src/main.c src/welcome.c -o "bin/poskeep" `mysql_config --cflags --libs`; bin/poskeep;
+([ ! -d "bin" ] && mkdir bin); gcc -Isrc src/cmdimpl/poskeepexit.c src/cmdimpl/poskeepinvexport.c src/cmdimpl/poskeepinvsearch.c src/cmdimpl/poskeeptransactions.c src/cmdimpl/poskeeptransactionsinsert.c src/db/connection.c src/model/modelcommands.c src/utils/fileutils.c src/utils/mdarrutils.c src/utils/strutils.c src/commands.c src/databases.c src/main.c src/welcome.c -o "bin/poskeep" `mysql_config --cflags --libs`; bin/poskeep;

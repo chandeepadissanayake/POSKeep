@@ -14,30 +14,10 @@
 #include "db/connection.h"
 #include "consts/database.h"
 #include "consts/dbtables.h"
+#include "utils/fileutils.h"
 
 #define MAX_PATH_LENGTH 260
 #define MAX_DB_ID_LENGTH 11
-
-int _poskeep_count_lines_file(char* file_path) {
-    FILE *fp;
-    fp = fopen(file_path, "r");
-
-    if (fp != NULL) {
-        int ch = 0;
-        int lines_count = 1;
-        while ((ch = fgetc(fp)) != EOF) {
-            if (ch == '\n') {
-                lines_count++;
-            }
-        }
-        fclose(fp);
-
-        return lines_count;
-    }
-    else {
-        return 0;
-    }
-}
 
 bool poskeep_inv_export() {
     // Prompts the user for the path of the input file.
