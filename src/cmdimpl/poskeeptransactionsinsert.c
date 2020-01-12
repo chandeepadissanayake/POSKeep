@@ -103,6 +103,9 @@ bool poskeep_transactions_insert() {
             _poskeep_transactions_insert_db(file_data_records, input_record_count);
 
             printf("Successfully added transactions to the database.\n");
+
+            // Freeing the memory used for above array.
+            free(file_data_records);
         }
         else {
             printf("Cannot read the file correctly.\n");
