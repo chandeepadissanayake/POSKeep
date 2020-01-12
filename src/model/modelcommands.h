@@ -9,7 +9,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-typedef struct {
+typedef struct command_mapping {
     char cmd;
     bool (*func_ptr)();
     char* help_str;

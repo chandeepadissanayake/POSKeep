@@ -6,13 +6,13 @@
  **/
 #pragma once
 
-typedef struct {
+typedef struct project_developer {
     char* name;
     char* stud_num;
 
 } ProjectDeveloper;
 
-typedef struct {
+typedef struct project_component {
     char* title;
     ProjectDeveloper developer;
     int sub_tasks_count;
